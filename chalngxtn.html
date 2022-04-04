@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+      <h1>Enter the Vegetable</h1>
+      
+        <label for="vegetable">Vegetable</label>
+        <select name="vegetable" id="vegetable">
+          <option value="asparagus">Asparagus</option>
+          <option value="brocolli">Brocolli</option>
+          <option value="cabbage">Cabbage</option>
+          <option value="carrot">Carrot</option>
+          <option value="potato">Potato</option>
+          <option value="other vegetables">Other vegetables</option>
+        </select> 
+
+        <button onclick="(function(){
+            const item = document.getElementById('vegetable').value;
+            console.log(item)
+            switch (item){
+              case 'carrot':
+              case 'potato':
+                document.getElementById('costprice').innerHTML = 'The price is 5 Euros per kg';
+                break;
+              case 'asparagus': 
+              case 'brocolli':
+              case 'cabbage': 
+                document.getElementById('costprice').innerHTML = 'The price is 10 Euros per Kg';
+                break;
+              default :
+                document.getElementById('costprice').innerHTML = 'The prices not known';
+                break;
+            }
+          })();">Click here to find out the price</button>
+
+      <h2 id="costprice"></h2>
+    
+  </body>
+</html>
